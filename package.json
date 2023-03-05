@@ -1,0 +1,27 @@
+{
+  "name": "web-component-number-animation",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/number-animation.umd.cjs",
+  "module": "./dist/number-animation.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/number-animation.js",
+      "require": "./dist/number-animation.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.6",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}

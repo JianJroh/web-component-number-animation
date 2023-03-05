@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web-component-number-animation</title>
+    <style>
+      #app {
+        line-height: 80vh;
+        font-size: 70px;
+        text-align: center;
+      }
+    </style>
+    <script type="module">
+      import { NumberAnimation } from "/src/index.ts";
+      customElements.define("number-animation", NumberAnimation);
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <number-animation to="12345.6789" precision="2" />
+    </div>
+  </body>
+</html>
