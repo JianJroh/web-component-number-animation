@@ -18,7 +18,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc --emitDeclarationOnly",
-    "type:check": "tsc --noEmit"
+    "type:check": "tsc --noEmit",
+    "release": "npx bumpp --commit --tag --push"
   },
   "devDependencies": {
     "@types/node": "^18.14.6",
