@@ -1,5 +1,6 @@
 export class NumberAnimation extends HTMLElement {
   #animating = false;
+  #from = any2number(this.getAttribute("from"));
   constructor() {
     super();
   }
@@ -36,7 +37,7 @@ export class NumberAnimation extends HTMLElement {
   }
   #onFinish() {
     this.#animating = false;
-    this.#updateViewValue(this.#to);
+    this.#from = this.#to;
   }
   #animate(from: number, to: number) {
     this.#animating = true;
@@ -57,12 +58,8 @@ export class NumberAnimation extends HTMLElement {
     }
     this.#animate(this.#from, this.#to);
   }
-
   get #to() {
     return any2number(this.getAttribute("to"));
-  }
-  get #from() {
-    return any2number(this.getAttribute("from"));
   }
   get #disabled() {
     return this.hasAttribute("disabled");
