@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>web-component-number-animation</title>
     <style>
-      #app {
-        line-height: 80vh;
+      main {
+        line-height: 70vh;
         font-size: 70px;
         text-align: center;
       }
     </style>
+  </head>
+  <body>
+    <button>change number</button>
+    <main>
+      <number-animation to="12345.6789" />
+    </main>
     <script type="module">
       import { NumberAnimation } from "/src/index.ts";
       customElements.define("number-animation", NumberAnimation);
+      let start = 12345.6789;
+      document.querySelector("button").addEventListener("click", () => {
+        document
+          .querySelector("number-animation")
+          .setAttribute("to", (start += 1000));
+      });
     </script>
-  </head>
-  <body>
-    <div id="app">
-      <number-animation to="12345.6789" precision="2" />
-    </div>
   </body>
 </html>
