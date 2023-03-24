@@ -17,7 +17,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc"
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "type:check": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^18.14.6",
