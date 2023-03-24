@@ -1,3 +1,13 @@
+export interface Props {
+  to: number;
+  from?: number;
+  precision?: number;
+  duration?: number;
+  locale?: string;
+  disabled?: boolean;
+  hideSeparator?: boolean;
+}
+
 export class NumberAnimation extends HTMLElement {
   #animating = false;
   #from = any2number(this.getAttribute("from"));
