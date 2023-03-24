@@ -19,13 +19,11 @@
       <number-animation to="12345.6789" />
     </main>
     <script type="module">
-      import { NumberAnimation } from "/src/index.ts";
-      customElements.define("number-animation", NumberAnimation);
+      import { NumberAnimation } from '/src/index.ts';
+      customElements.define('number-animation', NumberAnimation);
       let start = 12345.6789;
-      document.querySelector("button").addEventListener("click", () => {
-        document
-          .querySelector("number-animation")
-          .setAttribute("to", (start += 1000));
+      document.querySelector('button').addEventListener('click', () => {
+        document.querySelector('number-animation').setAttribute('to', (start += 1000));
       });
     </script>
   </body>

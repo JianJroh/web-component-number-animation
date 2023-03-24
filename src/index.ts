@@ -10,16 +10,16 @@ export interface Props {
 
 export class NumberAnimation extends HTMLElement {
   #animating = false;
-  #from = any2number(this.getAttribute("from"));
+  #from = any2number(this.getAttribute('from'));
   constructor() {
     super();
   }
   static get observedAttributes() {
-    return ["to"];
+    return ['to'];
   }
   attributeChangedCallback(attr: string) {
     switch (attr) {
-      case "to":
+      case 'to':
         this.#play();
         return;
     }
@@ -28,19 +28,14 @@ export class NumberAnimation extends HTMLElement {
     this.innerHTML = this.#formatNumber(animatingNumber);
   }
   #formatNumber(animatingNumber: number) {
-    const currentValue =
-      !this.#disabled && this.#animating ? animatingNumber : this.#to;
-    const formatted = round(currentValue, this.#precision).toFixed(
-      this.#precision
-    );
-    const [integer, decimal] = formatted.split(".");
-    const decimalSeparator = decimal
-      ? getNumberDecimalSeparator(this.#locale)
-      : "";
+    const currentValue = !this.#disabled && this.#animating ? animatingNumber : this.#to;
+    const formatted = round(currentValue, this.#precision).toFixed(this.#precision);
+    const [integer, decimal] = formatted.split('.');
+    const decimalSeparator = decimal ? getNumberDecimalSeparator(this.#locale) : '';
     const formattedInteger = this.#hideSeparator
       ? integer
       : new Intl.NumberFormat(this.#locale).format(Number(integer));
-    return `${formattedInteger ?? ""}${decimalSeparator ?? ""}${decimal ?? ""}`;
+    return `${formattedInteger ?? ''}${decimalSeparator ?? ''}${decimal ?? ''}`;
   }
   #onUpdate(currentValue: number) {
     this.#updateViewValue(currentValue);
@@ -69,22 +64,22 @@ export class NumberAnimation extends HTMLElement {
     this.#animate(this.#from, this.#to);
   }
   get #to() {
-    return any2number(this.getAttribute("to"));
+    return any2number(this.getAttribute('to'));
   }
   get #disabled() {
-    return this.hasAttribute("disabled");
+    return this.hasAttribute('disabled');
   }
   get #hideSeparator() {
-    return this.hasAttribute("hide-separator");
+    return this.hasAttribute('hide-separator');
   }
   get #precision() {
-    return any2number(this.getAttribute("precision"));
+    return any2number(this.getAttribute('precision'));
   }
   get #duration() {
-    return any2number(this.getAttribute("duration"), 1800);
+    return any2number(this.getAttribute('duration'), 1800);
   }
   get #locale() {
-    return this.getAttribute("locale") ?? "en";
+    return this.getAttribute('locale') ?? 'en';
   }
 }
 
@@ -115,16 +110,16 @@ function tween(props: {
   tick();
 }
 
-function getNumberDecimalSeparator(locale = "en") {
+function getNumberDecimalSeparator(locale = 'en') {
   const numberFormatter = new Intl.NumberFormat(locale);
   const decimalSeparator = numberFormatter
     .formatToParts(0.5)
-    .find((part) => part.type === "decimal")?.value;
+    .find((part) => part.type === 'decimal')?.value;
   return decimalSeparator;
 }
 
 function any2number(value: number | string | null, defaultValue = 0): number {
-  if (value == null || value == "") {
+  if (value == null || value == '') {
     return defaultValue;
   }
   return Number(value);

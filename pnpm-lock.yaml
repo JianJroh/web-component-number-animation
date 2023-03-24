@@ -2,11 +2,13 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^18.14.6
+  prettier: ^2.8.7
   typescript: ^5.0.2
   vite: ^4.1.0
 
 devDependencies:
   '@types/node': 18.14.6
+  prettier: 2.8.7
   typescript: 5.0.2
   vite: 4.1.4_@types+node@18.14.6
 
@@ -290,6 +292,12 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
+
+  /prettier/2.8.7:
+    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /resolve/1.22.1:

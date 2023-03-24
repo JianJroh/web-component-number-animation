@@ -18,11 +18,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc --emitDeclarationOnly",
+    "fmt:check": "prettier --check  .",
     "type:check": "tsc --noEmit",
     "release": "npx bumpp --commit --tag --push"
   },
   "devDependencies": {
     "@types/node": "^18.14.6",
+    "prettier": "^2.8.7",
     "typescript": "^5.0.2",
     "vite": "^4.1.0"
   }
