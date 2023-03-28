@@ -1,6 +1,6 @@
 {
   "name": "web-component-number-animation",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "packageManager": "pnpm@7.30.5",
   "type": "module",
   "files": [
