@@ -1,20 +1,27 @@
 {
   "name": "web-component-number-animation",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/number-animation.umd.cjs",
-  "module": "./dist/number-animation.js",
-  "types": "./dist/types/index.d.ts",
+  "main": "dist/number-animation.umd.cjs",
+  "module": "dist/number-animation.js",
+  "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/number-animation.js",
       "require": "./dist/number-animation.umd.cjs"
     }
   },
+  "keywords": [
+    "web-component",
+    "custom-element",
+    "number-animation",
+    "ui-component",
+    "animation"
+  ],
+  "repository": "git@github.com:JianJroh/web-component-number-animation.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc --emitDeclarationOnly",
