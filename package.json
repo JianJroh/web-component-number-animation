@@ -22,7 +22,10 @@
     "ui-component",
     "animation"
   ],
-  "repository": "git@github.com:JianJroh/web-component-number-animation.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JianJroh/web-component-number-animation.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc --emitDeclarationOnly",
