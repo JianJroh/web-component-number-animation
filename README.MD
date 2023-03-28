@@ -2,6 +2,9 @@
 
 This is a web component that allows you to create numerical animations on your website.
 
+[![Published on npm](https://img.shields.io/npm/v/web-component-number-animation.svg?logo=npm)](https://www.npmjs.com/package/web-component-number-animation)
+[![CI](https://github.com/JianJroh/web-component-number-animation/actions/workflows/ci.yml/badge.svg)](https://github.com/JianJroh/web-component-number-animation/actions/workflows/ci.yml)
+
 ## Features
 
 - 🌀 Works with any framework or no framework at all.
